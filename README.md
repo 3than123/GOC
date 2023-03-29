@@ -2,7 +2,7 @@
 Game of circles (GOC)
 
 git add .  
-git commit -m "description of work"  
+git commit -m "brief description of work you just did"  
 git push   
 
 
