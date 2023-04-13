@@ -52,13 +52,20 @@ class Player extends Sprite {
     void keyDown() {
         switch(key) { // key is a global value
             case 'a':
-            case 'A' : left = true; break;
+            case 'A': left = true; break;
             case 's':
-            case 'S' : down = true; break;
+            case 'S': down = true; break;
             case 'd':
-            case 'D' : right = true; break;
+            case 'D': right = true; break;
             case 'w':
-            case 'W' : up = true; break;
+            case 'W': up = true; break;
+            case ' ':
+            case 'f': fire(); break;
         }
+    }
+
+    void fire() {
+        PVector aim = new PVector(0,-10); //up
+        _SM.spawn(new Bullet(pos, aim, team));
     }
 }
