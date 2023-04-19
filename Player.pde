@@ -4,7 +4,7 @@ class Player extends Sprite {
     Player(float x, float y) {
         // super refers to the parent
         // ... I use it here as a constructor
-        super(x, y, 30, 30); // in this case, Sprite
+        super(x, y, 20, 20); // in this case, Sprite
         team = 1;
     }
     @Override
@@ -28,14 +28,14 @@ class Player extends Sprite {
 
     @Override
     void display() {
-        fill(200,0,200);
+        fill(0,0,255);
         ellipse(pos.x, pos.y, size.x, size.y);
     }
 
-    @Override
-    void handleCollision() {
+    //@Override
+    //void handleCollision() {
         //don't die
-    }
+   // }
 
     void keyUp() {
         switch(key) { // key is a global value
@@ -64,8 +64,11 @@ class Player extends Sprite {
         }
     }
 
+
+
     void fire() {
         PVector aim = new PVector(0,-10); //up
-        _SM.spawn(new Bullet(pos, aim, team));
+        PVector size = new PVector(12,12);
+        _SM.spawn(new Bullet(pos, size, aim, team));
     }
 }
